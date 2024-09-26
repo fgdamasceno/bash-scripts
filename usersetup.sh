@@ -23,7 +23,7 @@ echo "CRIANDO PASTAS /publico /adm, /ven e /sec..."
 mkdir /publico /adm /ven /sec
 
 # TORNANDO O DIRETÓRIO '/publico' ACESSIVEL PARA TODOS OS USUARIOS
-chown 777 /publico
+chmod 777 /publico
 
 # CRIANDO GRUPOS (GRP_ADM, GRP_VEN, GRP_SEC)
 echo "CRIANDO GRUPOS ADM, VEN E SEC..."
@@ -43,6 +43,7 @@ for nome in "${adm[@]}"
 do
     useradd $nome -c "${nome^} Silva" -s /bin/bash -m -p $(openssl passwd -6 ${nome}123) -G GRP_ADM
 done
+chown root:GRP_ADM /adm
 chmod 770 /adm
 
 
@@ -53,6 +54,7 @@ for nome in "${ven[@]}"
 do
     useradd $nome -c "${nome^} Santos" -s /bin/bash -m -p $(openssl passwd -6 ${nome}123) -G GRP_VEN
 done
+chown root:GRP_VEN /ven
 chmod 770 /ven
 
 
@@ -63,6 +65,7 @@ for nome in "${sec[@]}"
 do
     useradd $nome -c "${nome^} Oliveira" -s /bin/bash -m -p $(openssl passwd -6 ${nome}123) -G GRP_SEC
 done
+chown root:GRP_SEC /sec
 chmod 770 /sec
 
 echo "FIM DO PROGRAMA!"
