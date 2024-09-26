@@ -39,7 +39,7 @@ groupadd GRP_SEC
 # ADM
 adm=("carlos" "maria" "joao")
 echo "CRIANDO USUARIOS ADM E DEFININDO SUAS PERMISSÕES..."
-for nome in "${adm[@]}'"
+for nome in "${adm[@]}"
 do
     useradd $nome -c "$nome Silva" -s /bin/bash -m -p $(openssl passwd crypt $nome123) -e -G GRP_ADM
     chmod 770 /adm
@@ -49,7 +49,7 @@ done
 # VEN
 ven=("debora" "sebastiana" "roberto")
 echo "CRIANDO USUARIOS VEN E DEFININDO SUAS PERMISSÕES..."
-for nome in "${ven[@]}'"
+for nome in "${ven[@]}"
 do
     useradd $nome -c "$nome Silva" -s /bin/bash -m -p $(openssl passwd crypt $nome123) -e -G GRP_VEN
     chmod 770 /ven
@@ -59,7 +59,7 @@ done
 # SEC
 sec=("josefina" "amanda" "rogerio")
 echo "CRIANDO USUARIOS SEC E DEFININDO SUAS PERMISSÕES..."
-for nome in "${sec[@]}'"
+for nome in "${sec[@]}"
 do
     useradd $nome -c "$nome Silva" -s /bin/bash -m -p $(openssl passwd crypt $nome123) -e -G GRP_SEC
     chmod 770 /sec
