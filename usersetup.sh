@@ -66,3 +66,5 @@ done
 chmod 770 /sec
 
 echo "FIM DO PROGRAMA!"
+date
+echo ""
