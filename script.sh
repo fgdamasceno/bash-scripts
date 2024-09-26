@@ -41,9 +41,9 @@ adm=("carlos" "maria" "joao")
 echo "CRIANDO USUARIOS ADM E DEFININDO SUAS PERMISSÕES..."
 for nome in "${adm[@]}"
 do
-    useradd $nome -c "${nome} Silva" -s /bin/bash -m -p $(openssl passwd crypt ${nome}123) -e -G GRP_ADM
-    chmod 770 /adm
+    useradd $nome -c "${nome} Silva" -s /bin/bash -m -p $(openssl passwd crypt ${nome}123) -G GRP_ADM
 done
+chmod 770 /adm
 
 
 # VEN
@@ -51,9 +51,9 @@ ven=("debora" "sebastiana" "roberto")
 echo "CRIANDO USUARIOS VEN E DEFININDO SUAS PERMISSÕES..."
 for nome in "${ven[@]}"
 do
-    useradd $nome -c "${nome} Silva" -s /bin/bash -m -p $(openssl passwd crypt ${nome}123) -e -G GRP_VEN
-    chmod 770 /ven
+    useradd $nome -c "${nome} Silva" -s /bin/bash -m -p $(openssl passwd crypt ${nome}123) -G GRP_VEN
 done
+chmod 770 /ven
 
 
 # SEC
@@ -61,8 +61,8 @@ sec=("josefina" "amanda" "rogerio")
 echo "CRIANDO USUARIOS SEC E DEFININDO SUAS PERMISSÕES..."
 for nome in "${sec[@]}"
 do
-    useradd $nome -c "${nome} Silva" -s /bin/bash -m -p $(openssl passwd crypt ${nome}123) -e -G GRP_SEC
-    chmod 770 /sec
+    useradd $nome -c "${nome} Silva" -s /bin/bash -m -p $(openssl passwd crypt ${nome}123) -G GRP_SEC
 done
+chmod 770 /sec
 
 echo "FIM DO PROGRAMA!"
