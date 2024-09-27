@@ -13,35 +13,35 @@
 
 echo REMOVENDO DIRETORIOS, USUARIOS E GRUPOS
 
-echo REMOVENDO DIRETORIOS /publico /adm /ven /sec
+echo REMOVENDO DIRETORIOS /publico /adm /ven /sec...
 rm -rf /publico /adm /ven /sec
 
-echo REMOVENDO USUARIOS adm
+echo REMOVENDO USUARIOS adm...
 adm=("carlos" "maria" "joao")
 for nome in "${adm[@]}"
 do
     userdel -rf $nome
 done
 
-echo REMOVENDO USUARIOS ven
+echo REMOVENDO USUARIOS ven...
 ven=("debora" "sebastiana" "roberto")
 for nome in "${ven[@]}"
 do
     userdel -rf $nome
 done
 
-echo REMOVENDO USUARIOS sec
+echo REMOVENDO USUARIOS sec...
 sec=("josefina" "amanda" "rogerio")
 for nome in "${sec[@]}"
 do
     userdel -rf $nome
 done
 
-echo REMOVENDO GRUPOS GRP_ADM GRP_VEN GRP_SEC
+echo REMOVENDO GRUPOS GRP_ADM GRP_VEN GRP_SEC...
 grupos=("GRP_ADM" "GRP_VEN" "GRP_SEC")
-for grupo in "${groupos[@]}"
+for grupo in "${grupos[@]}"
 do
-    rmdir $grupo
+    groupdel -f $grupo
 done
 
 echo REMOÇÃO DE DIRETORIOS, USUARIOS E GRUPOS FINALIZADA COM SUCESSO!
