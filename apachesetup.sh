@@ -19,11 +19,11 @@
 #===================================================================================
 
 echo "ATUALIZANDO O SERVIDOR..."
-apt update
-apt upgrade -y
+apt-get update
+apt-get upgrade -y
 
 echo "INSTALANDO APLICAÇÕES NECESSÁRIAS (apache2 e unzip)..."
-apt install apache2 unzip -y
+apt-get install apache2 unzip -y
 
 systemctl restart apache2
 
@@ -34,7 +34,7 @@ wget https://github.com/denilsonbonatti/linux-site-dio/archive/refs/heads/main.z
 
 unzip main.zip
 
-mv linux-site-dio-main/ /var/www/html/
+mv -f linux-site-dio-main/* /var/www/html/
 
 echo "PROGRAMA FINALIZADO!"
 date
