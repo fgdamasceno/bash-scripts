@@ -25,6 +25,8 @@ apt upgrade -y
 echo "INSTALANDO APLICAÇÕES NECESSÁRIAS (apache2 e unzip)..."
 apt install apache2 unzip -y
 
+systemctl restart apache2
+
 cd /tmp
 
 echo "BAIXANDO APLICAÇÃO WEB..."
